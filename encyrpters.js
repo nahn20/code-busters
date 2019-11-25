@@ -51,7 +51,7 @@ function randomInt(lower, upper){ //Includes the upper bound with equal odds (ma
     return rando;
 }
 function randomText(){ //TODO: DO
-    return textsA[0];
+    return maybeTexts[randomInt(0, maybeTexts.length-1)]
 }
 //ACTUAL CYPHERS\\
 //Look here when adding new cypher types
