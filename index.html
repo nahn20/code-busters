@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code Busters Practice</title>
+        <script src="main.js"></script>
+        <script src="plaintexts.js"></script>
+        <script src="encyrpters.js"></script>
+        <style>
+            input[type=radio] {
+                border: 0px;
+                width: 5%;
+            }
+            #inputBox {
+                width: 50%;
+                height: 50%;
+            }
+            #response {
+                color: "black";
+            }
+            #optionsMenu {
+                margin-left: 20%;
+                position: absolute;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body onload="newCypher()">
+        <div id="optionsMenu"></div>
+        <div>
+        Select Encryption Method
+        <br>
+        <!-- Look here when adding new cypher types -->
+        <input type="radio" name="encryptionRadio" value="caesar" onclick="optionsMenu()" checked>Caesar<br>
+        <input type="radio" name="encryptionRadio" value="aristocrat" onclick="optionsMenu()">Aristocrat<br>
+        <input type="radio" name="encryptionRadio" value="patristocrat" onclick="optionsMenu()">Patristocrat<br>
+        <input type="radio" name="encryptionRadio" value="affine" onclick="optionsMenu()">Affine<br>
+        <input type="radio" name="encryptionRadio" value="vigenere" onclick="optionsMenu()">Vigen&egravere<br>
+        <input type="radio" name="encryptionRadio" value="baconian" onclick="optionsMenu()">Baconian<br>
+        <input type="radio" name="encryptionRadio" value="hill" onclick="optionsMenu()">Hill<br>
+        </div>
+        <button type="button" onclick="newCypher()">Refresh Text</button>
+        
+        <div id="encryptedText">Encrypted Text: </div>
+        <div id="extraInfo"></div>
+        <div id="enterPlainTextGuess">Enter Plain Text Guess:</div>
+        <textArea id="inputBox" cols="40" rows="10"></textArea>
+        <br><button type="button" onclick="submitText()">Submit</button>
+        <br><div id="response">Hi how are you doing today?</div>
+        <div id="numWrong"></div>
+    </body>
+</html>
