@@ -47,6 +47,9 @@ function newCypher(){
         case "hill":
             cypheredText = hill(currentPlainText, option, {});
             break;
+        case "pollux":
+            cypheredText = pollux(currentPlainText, {});
+            break;
         default:
             console.log("Error in Encryption Selection. Nathan is trash 001.");
     }
@@ -89,7 +92,7 @@ function optionsMenu(){ //Updates the options menu based on the currently select
         }
     }
     //Look here when adding new cypher types
-    if(cypher == "caesar" || cypher == "aristocrat" || cypher == "patristocrat"){ //No options menu
+    if(cypher == "caesar" || cypher == "aristocrat" || cypher == "patristocrat" || cypher == "pollux"){ //No options menu
         document.getElementById("optionsMenu").innerHTML = "";
     }
     if(cypher == "affine" || cypher == "vigenere" || cypher == "hill"){ //Options: CTP or PTC

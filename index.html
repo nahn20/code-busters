@@ -18,25 +18,53 @@
                 color: "black";
             }
             #optionsMenu {
-                margin-left: 20%;
+                margin-left: 10%;
                 position: absolute;
                 width: 100%;
+            }
+            #passageSelector {
+                float: right;
+                width: 20%;
+                margin-right: 50%;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            td, th {
+                text-align: center;
+                padding: 3px;
+                margin: 0;
+                background-color: #8b1212 ;
+            }
+            th:nth-child(even) {
+                background-color: #b7b7b7;
+            }
+            td:nth-child(even) {
+                background-color: #b7b7b7;
             }
         </style>
     </head>
     <body onload="newCypher()">
+        <div id="passageSelector">
+            Short English: <input type="checkbox" id="sen" checked>
+            <br>Medium English: <input type="checkbox" id="men" checked>
+            <br>Long English: <input type="checkbox" id="len" checked>
+            <br>Spanish: <input type="checkbox" id="span">
+            <br>Approximate Percent Random Letters Swapped: <input type="number" id="typos" min="0" max="50" value="0">
+        </div>
         <div id="optionsMenu"></div>
         <div>
         Select Encryption Method
         <br>
         <!-- Look here when adding new cypher types -->
-        <input type="radio" name="encryptionRadio" value="caesar" onclick="optionsMenu()" checked>Caesar<br>
-        <input type="radio" name="encryptionRadio" value="aristocrat" onclick="optionsMenu()">Aristocrat<br>
+        <input type="radio" name="encryptionRadio" value="caesar" onclick="optionsMenu()">Caesar<br>
+        <input type="radio" name="encryptionRadio" value="aristocrat" onclick="optionsMenu()" checked>Aristocrat<br>
         <input type="radio" name="encryptionRadio" value="patristocrat" onclick="optionsMenu()">Patristocrat<br>
         <input type="radio" name="encryptionRadio" value="affine" onclick="optionsMenu()">Affine<br>
         <input type="radio" name="encryptionRadio" value="vigenere" onclick="optionsMenu()">Vigen&egravere<br>
         <input type="radio" name="encryptionRadio" value="baconian" onclick="optionsMenu()">Baconian<br>
         <input type="radio" name="encryptionRadio" value="hill" onclick="optionsMenu()">Hill<br>
+        <input type="radio" name="encryptionRadio" value="pollux" onclick="optionsMenu()">Pollux<br>
         </div>
         <button type="button" onclick="newCypher()">Refresh Text</button>
         
@@ -48,8 +76,10 @@
         <br><div id="response">Hi how are you doing today?</div>
         <div id="numWrong"></div>
         <br><br><br>Features Coming Eventually:
-        <br>- Pollux and Morbit ciphers
+        <br>- Morbit cipher (it's complicated af)
         <br>- Hotkeys
-        <br>- Choice for passage type. Long passages, short passages, incorrectly spelled passages, spanish passages, etc.
+        <br>- Fix string compare
+        <br><br><br><br>
     </body>
+    <footer>Made with pain by Nathan Ahn '20</footer>
 </html>
